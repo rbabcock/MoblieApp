@@ -2,11 +2,11 @@ $(document).ready(function(){
 
 $("#decrypt").click(function(e){
 		
-		var decrypt = $("#passlist").val();
+		var uncrypt = $("#passlist").val();
 		
 		$.ajax({                                      
       			url: 'http://www.zarnithon.com/php/decode.php',                         
-      			data: {decrypt: decrypt},                       
+      			data: {decrypt: uncrypt},                       
       			dataType: 'json',
       			success: function(data){
       				$("#decryptpass").val(data);
@@ -25,8 +25,6 @@ $("#contactForm").bind("submit", function(e){
 	var num = $("#numbers").val();
 	var symb = $("#symbols").val();
 
-	
-	
 	var onSuccess = function(response){
 	
 	   if(typeof response != "undefined" && typeof response.password != "undefined" && response.password != "") {
@@ -58,14 +56,23 @@ $("#contactForm").bind("submit", function(e){
 	
 });
 
-	
-
-	/*$.ajax({
+	$(function (){
+		$.ajax({
 		url:'http://www.zarnithon.com/php/connect.php',
-		dataType:'POST',
-		data: {}
+		dataType: "json",
+		data: {},
+		success: function(data){
+				for(var i=0; i<data.length; i++){
+					$("#passlist").append("<option>"+ data[i].Password + "</option>");
+			
+				}
+				console.log(data);
+						
+			}
+
+		}); 
 	
-	})*/
+	});
 	
 });
 
