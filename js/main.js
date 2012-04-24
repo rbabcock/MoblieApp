@@ -1,18 +1,6 @@
 $(document).ready(function(){
-	
 
-
-/*$("#decrypt").click(function(){
-	$("#decryptpass").val($("#passlist").val());
-	
-	console.log($("#decryptpass").val());
-	console.log("click");
-	});
-
-});*/
-
-
-$("#decrypt").click(function(){
+$("#decrypt").click(function(e){
 		
 		var decrypt = $("#passlist").val();
 		
@@ -28,29 +16,56 @@ $("#decrypt").click(function(){
 
 	});
 
-$("#contactForm").submit(function(){
-	$.ajax({
-		url: 'http://www.zarnithon.com/php/generate.php',
-		type: 'POST',
-		data: {datapass: password,
-			   length: passwordL,
-			   lowercase: lowercase,
-			   uppercase: uppercase,
-			   numbers: numbers,
-			   symbols: symbols	
-			  },
-		success: function(data){
-			$("#password").val(data);
-			
-			console.log(data);
-		
-		}
 	
-	});
 
+$("#contactForm").bind("submit", function(e){
+	var length = $("#passwordL").val();
+	var lc = $("#lowercase").val();
+	var uc = $("#uppercase").val();
+	var num = $("#numbers").val();
+	var symb = $("#symbols").val();
+
+	
+	
+	var onSuccess = function(response){
+	
+	   if(typeof response != "undefined" && typeof response.password != "undefined" && response.password != "") {
+	   
+	   		$("#password").val(response.password);
+	   
+	   }
+	   
+	   
+	       
+	};
+
+	$.ajax({
+		   url: 'http://www.zarnithon.com/php/generate.php',
+		   type: 'POST',
+		   dataType: 'json',
+		   data: {
+		       passwordL: length,
+		       lowercase: lc,
+		       uppercase: uc,
+		       numbers: num,
+		       symbols: symb
+		   },
+		   success: onSuccess
+	});	
+	
+	
+	e.preventDefault();
+	
 });
 
-
 	
-})
+
+	/*$.ajax({
+		url:'http://www.zarnithon.com/php/connect.php',
+		dataType:'POST',
+		data: {}
+	
+	})*/
+	
+});
 
