@@ -1,0 +1,165 @@
+<html lang="en">
+	<head>
+		
+		<meta charset="UTF-8">
+		
+		<title>Genster Password Generator</title>
+		
+		<meta name="viewport" content="width=device-width; initial-cale=1.0">
+		
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css" />
+						
+		<link rel="stylesheet" href="css/themes/styles.min.css" />
+		
+		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+		
+		<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
+		
+		<script src="js/main.js"></script>
+
+	</head>	
+	
+	<body>		
+		
+		
+			<div data-role="header">
+				<h1>Genster</h1>
+			</div><!-- Header -->
+			
+			<div data-role="content">
+				
+				<form action="http://www.zarnithon.com/php/generate.php" method="post" id="contactForm" data-ajax="false">
+					<label for="slider-step">Password Length:</label>
+					<input type="range" name="passwordL" id="passwordL" value="0" min="0" max="15" step="1" />		
+					
+				<div data-role="fieldcontain">
+ 				   		
+ 				   		<fieldset data-role="controlgroup">
+	   						<legend>Lower Case:</legend>
+	  						 <input type="checkbox" name="lowercase" id="lowercase" class="custom" value="checked" />
+	  						 <label for="lowercase">Lowercase</label>
+   						</fieldset>	
+    			</div>
+				
+				<div data-role="fieldcontain">
+ 				   
+ 				   <fieldset data-role="controlgroup">
+	   						<legend>Upper Case:</legend>
+	  						 <input type="checkbox" name="uppercase" id="uppercase" class="custom" value="checked" />
+	  						 <label for="uppercase">Uppercase</label>
+   					</fieldset>	
+				</div>
+				
+				
+				<div data-role="fieldcontain">
+ 				   
+ 				     <fieldset data-role="controlgroup">
+	   						<legend>Numbers:</legend>
+	  						 <input type="checkbox" name="numbers" id="numbers" class="custom" value="checked" />
+	  						 <label for="numbers">Numbers</label>
+   					</fieldset>	
+ 				   
+				</div>
+				
+				
+				<div data-role="fieldcontain">
+				     
+				       <fieldset data-role="controlgroup">
+	   						<legend>Symbols:</legend>
+	  						 <input type="checkbox" name="symbols" id="symbols" class="custom" value="checked" />
+	  						 <label for="symbols">Symbols</label>
+   					</fieldset>	
+				     
+				</div>
+				
+				
+				<input type="submit" data-theme="b" name="generate" id="generate" value="Generate" />
+
+				<div data-role="fieldcontain" class="ui-hide-label">
+						<label for="name">Password</label>
+						<input type="text" name="password" id="password" placeholder="Password" data-mini="true" />
+				</div>
+				<label>Select A Password to decrypt</label>	
+				<select name="passlist" id="passlist">
+					<option>test</option>					
+					<option>dskljflaskdjf</option>
+					<option>TW95ZUhBcW9Y</option>
+					<option>lksdjfl;kasjdflt</option>
+					<option>l;sdkjflaksjdfl;k</option>
+					<option>JG8jb3pBN09O</option>
+					<option>UtuDouO0e</option>
+					<option>T2RJUEFyZWtV</option>
+					<option>ZGEzdTF1eEFCSTE=</option>
+					<option>SWNJUVVsQTB1</option>
+					<option>dXNVNWVjQXdBbklY</option>
+					<option>QVJBSGVoYQ==</option>
+					<option>emVtb1dJM28=</option>
+					<option>RUhPMmVndWRl</option>
+					<option>QXppMW9jRUo=</option>
+					<option>dm9WT2RJM0l5</option>
+					<option>dk9RdURheEVTSWI=</option>
+					<option>b2xlTElCdTU=</option>
+					<option>NVV0aUBhcUU=</option>
+					<option>OE9HQTh1NmE=</option>
+					<option>Z2E0aSNhTEFEQQ==</option>
+					<option>b0pFbWVSaTY=</option>
+					<option>VGF2QXFPck9KdQ==</option>
+					<option>YWdVQHVrSTdvZA==</option>
+					<option>b1JlREFyZVZBN2U=</option>
+					<option>aVF1JUFWSXZP=</option>
+					<option>VURPUUVnZXhp=</option>
+					<option>bFV4dXZJNGVr=</option>
+					<option>MHVUSVhFaEVqVVY==</option>
+					
+				</select>				
+
+				<input type="submit" name="decrypt" id="decrypt" data-theme="b" value="Decrypt" />
+								
+				</form>
+				
+				
+				
+				<div data-role="fieldcontain" class="ui-hide-label">
+					<label for="decrypt">Decrypted Password</label>
+					<input type="text" name="decryptpass" id="decryptpass" placeholder="Decrypted Password" data-min="true" />
+				</div>						
+			
+			
+			<script type="text/javascript">
+			
+			
+ 			 /*$(function (){
+  
+    			$.ajax({                                      
+      				url: 'http://www.zarnithon.com/php/connect.php',                         
+      				data: "",                       
+      				dataType: 'json',                    
+      			
+      			
+      			success: function(data){
+        		
+        		var id = data[0];              
+        		
+        		var vname = data;           
+               
+               $.each(data, function(){
+                $('#passlist').html("<select><option>" +data[1]+"</option></select>"); //Set output element html
+               
+               });
+              
+        
+      } 
+    });
+  }); */
+			
+			
+			
+			
+			</script>
+			
+				
+	
+	</body>
+
+
+</html>
