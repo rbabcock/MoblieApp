@@ -1,24 +1,27 @@
 $(document).ready(function(){
 
-$("#decrypt").click(function(e){
+$("#retrieveForm").bind("submit", function(e){
 		
 		var uncrypt = $("#passlist").val();
+		console.log(uncrypt);
 		
 		$.ajax({                                      
       			url: 'http://www.zarnithon.com/php/decode.php',                         
-      			data: {decrypt: uncrypt},                       
+      			type: 'POST',
+      			data: {passlist: uncrypt},                       
       			dataType: 'json',
       			success: function(data){
-      				$("#decryptpass").val(data);
+      				$("#decryptedpass").val(data);
+      				console.log(data);
       			} 
 
 		});
-
+			e.preventDefault();
 	});
 
 	
 
-$("#contactForm").bind("submit", function(e){
+$("#passwordForm").bind("submit", function(e){
 	var length = $("#passwordL").val();
 	var lc = $("#lowercase").val();
 	var uc = $("#uppercase").val();
