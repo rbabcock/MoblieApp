@@ -27,12 +27,6 @@ $("#passwordForm").bind("submit", function(e){
 	var uc = $("#uppercase").serialize();
 	var num = $("#numbers").serialize();
 	var symb = $("#symbols").serialize();
-	
-	console.log(length);
-	console.log(lc);
-	console.log(uc);
-	console.log(num);
-	console.log(symb);
 
 	var onSuccess = function(response){
 	
