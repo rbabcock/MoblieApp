@@ -23,10 +23,16 @@ $("#retrieveForm").bind("submit", function(e){
 
 $("#passwordForm").bind("submit", function(e){
 	var length = $("#passwordL").val();
-	var lc = $("#lowercase").val();
-	var uc = $("#uppercase").val();
-	var num = $("#numbers").val();
-	var symb = $("#symbols").val();
+	var lc = $("#lowercase").serialize();
+	var uc = $("#uppercase").serialize();
+	var num = $("#numbers").serialize();
+	var symb = $("#symbols").serialize();
+	
+	console.log(length);
+	console.log(lc);
+	console.log(uc);
+	console.log(num);
+	console.log(symb);
 
 	var onSuccess = function(response){
 	
