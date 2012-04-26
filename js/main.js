@@ -59,7 +59,7 @@ $("#passwordForm").bind("submit", function(e){
 	
 });
 
-	$(function (){
+	$("#rpass").click(function(){
 		$.ajax({
 		url:'http://www.zarnithon.com/php/connect.php',
 		dataType: "json",
